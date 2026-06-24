@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Secrets / local config
+.env
+.env.local
+*.secret
+
+# Databases / local data
+*.db
+*.sqlite
+*.sqlite3
+
+# Reports output (keep summaries, ignore bulky raw exports)
+reports/**/trades.csv
+reports/**/equity_curve.csv
+reports/**/rejected*.csv
+reports/**/*.parquet
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
