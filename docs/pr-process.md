@@ -63,8 +63,8 @@ This project is **one human (Owner) driving two AI tools (Claude + Codex)**. So:
 
 | Rule                                  | Status                                            |
 |---------------------------------------|---------------------------------------------------|
-| No direct push to `main`              | **Enforced** — GitHub branch protection ruleset   |
-| CI must pass to merge                 | **Enforced** — required status check *(after PR-002 establishes CI)* |
+| No direct push to `main`              | **Convention (for now)** — see branch-protection note below |
+| CI must pass to merge                 | **Convention (for now)** — CI runs on every PR (after PR-002); Owner merges only when green |
 | PR uses the template / checklist      | **Convention** — template auto-populates; Owner verifies |
 | "Claude AND Codex both approve"       | **Convention** — cannot be GitHub-enforced with one human; the Owner runs both reviews and merges only when both pass |
 | Small, scoped PRs                     | **Convention** — enforced by discipline + review  |
@@ -74,14 +74,26 @@ It is a discipline the Owner upholds, not a platform guarantee.
 
 ## Branch protection (the real config)
 
-`main` ruleset:
+⚠️ **Branch protection / rulesets require GitHub Pro for a _private_ repo.** This
+repo is private on a free plan, so platform-level protection is **not active
+yet**. Until that changes, "no direct push to `main`" and "CI green to merge" are
+**conventions the Owner upholds**, not platform guarantees.
+
+To make them truly enforced, pick one:
+- Upgrade the account to **GitHub Pro** (keeps the repo private), **or**
+- Make the repo **public** (rulesets are free for public repos).
+
+Once either is true, enable on `main`:
 - Require a pull request before merging.
-- Require status checks to pass (the `ci` workflow) — enabled once PR-002 lands
-  a real CI workflow.
+- Require status checks to pass (the `ci` workflow) — after PR-002 lands CI.
 - Block force pushes & deletions.
 
-> The bootstrap/governance commit (this one) is seeded directly to `main` as the
-> standard repo-initialization exception. Every change after it goes through a PR.
+The exact ruleset JSON is ready to apply via `gh api` the moment the plan allows
+it — ask the Owner's assistant to enable it.
+
+> The bootstrap/governance commit is seeded directly to `main` as the standard
+> repo-initialization exception. Every change after it **should** go through a PR
+> (convention) — and **must**, once protection is enabled.
 
 ## Roles in review
 

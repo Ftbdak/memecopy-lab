@@ -82,8 +82,9 @@ no reasons is a bug.
 
 ## 7. Process gates (see `pr-process.md`)
 
-- No direct push to `main` *(enforced via branch protection)*.
-- CI green required to merge *(enforced)*.
+- No direct push to `main` *(convention now; enforceable via branch protection
+  once the repo is GitHub Pro or public — see `pr-process.md`)*.
+- CI green required to merge *(convention now; same enforcement note)*.
 - PR Safety Checklist fully checked *(convention + template)*.
 - Cross-review before merge *(convention — one human, two AI tools)*.
 - Small PRs. No scope creep. No "while I'm here" refactors.
